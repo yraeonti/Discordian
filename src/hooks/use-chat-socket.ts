@@ -29,6 +29,10 @@ export const useChatSocket = ({
       return;
     }
 
+    // console.log('addkey', addKey);
+    // console.log('updatekey', updateKey);
+    
+
     socket.on(updateKey, (message: MessageWithMemberWithProfile) => {
       queryClient.setQueryData([queryKey], (oldData: any) => {
         if (!oldData || !oldData.pages || oldData.pages.length === 0) {
@@ -63,6 +67,9 @@ export const useChatSocket = ({
             }]
           }
         }
+
+        console.log('socket connection exist');
+        
 
         const newData = [...oldData.pages];
 

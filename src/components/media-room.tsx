@@ -50,7 +50,6 @@ export const MediaRoom = ({
     })()
   }, [user?.firstName, user?.lastName, chatId]);
 
-  console.log('token viddd',token);
   
 
   if (token === "") {

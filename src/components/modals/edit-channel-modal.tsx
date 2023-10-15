@@ -94,7 +94,7 @@ export const EditChannelModal = () => {
     onClose();
   }
 
-  console.log(isModalOpen);
+
   
 
   return (

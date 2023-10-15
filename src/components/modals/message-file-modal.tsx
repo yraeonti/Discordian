@@ -58,9 +58,6 @@ export const MessageFileModal = () => {
         url: apiUrl || "",
         query,
       });
-
-      console.log(url);
-      console.log('values',values);
       
 
       await axios.post(url, {
