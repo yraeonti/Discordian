@@ -22,10 +22,20 @@ export const MediaRoom = ({
   const [token, setToken] = useState("");
 
   useEffect(() => {
-    // if (!user?.firstName || !user?.lastName) return;
 
-    // const name = `${user.firstName} ${user.lastName}`;
-    const name = `china`;
+    let name = null
+    if (user?.firstName ) {
+       name = `${user?.firstName}`
+    }
+    if (user?.lastName) {
+      name = name ?? '' + `${user?.lastName}`
+    }
+    if (name === null) {
+      name = 'User'
+    }
+
+
+  
 
     (async () => {
       try {
