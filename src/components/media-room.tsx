@@ -22,20 +22,26 @@ export const MediaRoom = ({
   const [token, setToken] = useState("");
 
   useEffect(() => {
-    if (!user?.firstName || !user?.lastName) return;
+    // if (!user?.firstName || !user?.lastName) return;
 
-    const name = `${user.firstName} ${user.lastName}`;
+    // const name = `${user.firstName} ${user.lastName}`;
+    const name = `china`;
 
     (async () => {
       try {
         const resp = await fetch(`/api/livekit?room=${chatId}&username=${name}`);
         const data = await resp.json();
+        console.log('useeffect token',data);
+        
         setToken(data.token);
       } catch (e) {
         console.log(e);
       }
     })()
   }, [user?.firstName, user?.lastName, chatId]);
+
+  console.log('token viddd',token);
+  
 
   if (token === "") {
     return (

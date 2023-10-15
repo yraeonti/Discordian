@@ -22,5 +22,8 @@ export async function GET(req: NextRequest) {
 
   at.addGrant({ room, roomJoin: true, canPublish: true, canSubscribe: true });
 
+  console.log(at.toJwt());
+  
+
   return NextResponse.json({ token: at.toJwt() });
 }
